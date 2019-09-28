@@ -5,12 +5,14 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import io.restassured.RestAssured;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.serenitybdd.rest.SerenityRest;
+import net.thucydides.core.annotations.Manual;
 import net.thucydides.core.annotations.Pending;
 
 @RunWith(SerenityRunner.class)
@@ -24,25 +26,11 @@ public class FirstSerenityTest {
 	}
 	
 	@Test
-	public void getAllStudents() {
+	public void getAllStudentsPassing() {
 		
 		RestAssured.given()
 		.when()
-		.get("/1")
-		.then()
-		.log()
-		.all()
-		.statusCode(200);
-		
-	}
-	
-	@Pending
-	@Test
-	public void getSpecificStudent() {
-		
-		RestAssured.given()
-		.when()
-		.get("/1")
+		.get("/list")
 		.then()
 		.log()
 		.all()
@@ -51,7 +39,7 @@ public class FirstSerenityTest {
 	}
 	
 	@Test
-	public void getAllStudentsfailing() {
+	public void getStudentfailing() {
 		
 		SerenityRest.given()
 		.when()
@@ -63,6 +51,18 @@ public class FirstSerenityTest {
 		
 	}
 	
+	@Pending
+	@Test
+	public void getStudentPending() {
+						
+	}
+	
+	@Ignore
+	@Test
+	public void IgnoreTestCase() {
+				
+	}
+	
 	@Test
 	public void compilationError() {
 		
@@ -71,11 +71,17 @@ public class FirstSerenityTest {
 	}
 	
 	@Test
-	public void comprimised() throws FileNotFoundException {
+	public void fileDoesNotExist() throws FileNotFoundException {
 		
 		File f = new File("D://test");
 		FileReader fr = new FileReader(f);
 		
+	}
+	
+	@Manual
+	@Test
+	public void thisIsaManualTest() {
+				
 	}
 	
 }
