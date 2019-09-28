@@ -1,4 +1,4 @@
-package com.studentapp.junit;
+package com.studentapp.junit.studentIdsInfo;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -16,7 +16,7 @@ import net.thucydides.core.annotations.Manual;
 import net.thucydides.core.annotations.Pending;
 
 @RunWith(SerenityRunner.class)
-public class FirstSerenityTest {
+public class StudentIdsTest {
 
 	@BeforeClass
 	public static void init() {
@@ -29,6 +29,7 @@ public class FirstSerenityTest {
 	public void getAllStudentsPassing() {
 		
 		RestAssured.given()
+//		SerenityRest.given()
 		.when()
 		.get("/list")
 		.then()

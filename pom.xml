@@ -10,6 +10,8 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<serenity.version>1.5.8</serenity.version>
 		<serenity.maven.version>1.5.8</serenity.maven.version>
 		<junit.version>4.12</junit.version>
