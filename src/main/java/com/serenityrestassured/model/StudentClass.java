@@ -1,6 +1,6 @@
 package com.serenityrestassured.model;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class StudentClass {
 	
@@ -9,7 +9,7 @@ public class StudentClass {
 	private String lastName;
 	private String email;
 	private String programme;
-	private List<String> course;
+	private ArrayList<String> courses;
 	
 	public int getId() {
 		return id;
@@ -41,12 +41,12 @@ public class StudentClass {
 	public void setProgramme(String programme) {
 		this.programme = programme;
 	}
-	public List<String> getCourse() {
-		return course;
+	public ArrayList<String> getCourse() {
+		return courses;
 	}
-	public void setCourse(List<String> course) {
-		this.course = course;
+	public void setCourse(ArrayList<String> course) {
+		this.courses = course;
 	}
-	
+		
 
 }
