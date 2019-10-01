@@ -53,6 +53,23 @@ public class StudentSerenityTest {
 		
 	}
 	
+	@Step ("This Step will get student Info by email:{0}")
+	public HashMap<String,Object> getStudentInfoByEmail (String email){
+		
+		String p1 = "findAll{it.email=='";
+		String p2 = "'}.get(0)";
+		
+		System.out.println("This is a print :"+p1+email+p2);
+		
+		return SerenityRest.rest().given()
+		.when()
+		.get("/list")
+		.then()
+		.extract()
+		.path(p1+email+p2);
+		
+	}
+	
 	@Step ("This Step will UPDATE student with Student ID:{0}, First Name:{1},Last Name:{2}, email:{3}, Program:{4}, Courses:{5}")
 	public ValidatableResponse updateStudent (int StudentId, String fName, String lName, String email, String programOpted,ArrayList<String> courses) {
 		
